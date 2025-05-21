@@ -1,0 +1,172 @@
+#Session1
+
+- Moi
+  - Halimatou DIALLO
+  - ensemble nous allons apprendre Git & GitHub
+
+- Vous:
+  - Non
+  - profil ? avez vous déjà écrit des logiciels ? langage ?
+  - quel système d'exploitation utilisez vous ?
+  - vos objectifs en suivant cette formation
+
+# Système de contrôle de version:
+- le développement d'un logiciel
+  - commence à une date D1 donnée
+  - et se termine à une D2 donnée
+  - entre ces deux dates là, il va y avoir "différents états"
+  - à la fin de chaque journée, le logiciel va avoir un "état" bien connu
+
+  - suivre, gérer, monitorer, les différents "états" du développement de
+    - notre logiciel, c'est cela qu'on appelle, faire le contrôle de version
+
+
+# Pour:
+  - "gérer", le cycle de vie du développement de mon logiciel
+  - "suivre", les différents "états" durant le developpement de mon logiciel
+  - je dois me servir d'un logiciel bien particulier:
+    - Git: très connu, très populaire, très utilisé
+    - Mercurial: un peu moins connu, un peu moins populaire
+    - Bazaar: un peu moins connu, un peu moins populaire
+    - il y en d'autres, la liste est non exhaustive.
+
+
+- Nous apprendrons à utiliser Git car:
+  - c'est le plus connu
+  - c'est celui que vous risquez de rencontrer lorsque vous irez sur le terrain
+  - il est extremement connu et populaire
+  - Attention: cela ne signifie par que les autres sont moins bons.
+  - Nous ferons une introduction, nous verrons les fondamentaux
+  - Et donc, demain, pour approfondir, merci de visiter le site officiel
+  - site web officiel: https://git-scm.com/
+    - vous y trouverez toute info utile relative à GIT
+
+- Installation de Git:
+  - pour les utilisateurs de Windows:
+    - aller sur ce lien
+    https://github.com/git-for-windows/git/releases/download/v2.40.1.windows.1/Git-2.40.1-64-bit.exe
+
+
+- Git va vous permettre de gerer tout le cycle de vie de votre logiciel
+  - à un instant t donné, je peux savoir
+    - qui a ajouté une fonctionnalité f?
+    - quelle est cette fonctionnalité f?
+    - à la quelle date et comment la modification s'est faite?
+  - NB: Git permet déjà à plusieurs membres d'une équipe de collaborer ensemble sur un projet
+  - Cependant....
+    - Certaines personnes, ont jugé qu'on peut aller plus loin
+      - et des plateformes telles que Github, Gitlab, Bitbucket, .... sont nées
+    - Attention
+      - Github, est une plateforme qui fonctionne en s'appuyant sur Git
+      - Mais Git peut très bien s'utiliser sans avoir de compte sur Github
+    - Si je devais utiliser une analogie:
+      - Git me permet de faire la gestion de version de mon logiciel "sur mon ordinateur"
+      - Github me permet de:
+        - d'avoir une copie de ce logiciel quelque part sur internet (backup, sauvegarde)
+        - administrer le developpement "collaboratif" d'un logiciel
+        - administrer la liste des tâches à effectuer sur un projet logiciel
+        - de savoir qui fait quoi? quand? où? comment?
+        - fonctionne aussi un peu comme un reseau social
+          - sur lequel je peux
+            - trouver d'autres developpeurs de logiciel
+            - et voir sur quoi ils travaillent
+            - discuter avec eux, poser des questions, echanger
+            - un peu comme Linkedin mais orienté "code"
+        - Attention
+          - Github est une plateforme, il existe des alternatives
+            - Gitlab, Bitbucket, Bazaar, ...
+
+- La gestion d'une equipe de developpeurs:
+  - il existe differentes manière de faire cette gestion
+  - nous, nous utiliserons la combinaison Git + Github
+  - Github c'est: (en plus de ce qui est mentionné plus haut)
+    - plateforme de collaboration
+    - utilisée par les équipes de developpement
+    - pour construire des logiciels
+  - Pour pouvoir travailler avec, il va falloir y posséder un compte
+    - lien de la plateforme: https://github.com
+
+- Github Desktop:
+  - le rôle de Github Desktop permet de manipuler Git sans taper de commandes
+  - le rôle de Github Desktop sera de faciliter la synchronisation entre
+    - votre ordinateur
+    - et la plateforme
+
+  - après avoir installé Github Desktop, il faudra
+    - le lancer
+    - vous connecter à Github (à travers Github Desktop)
+    - Donner l'authorisation d'accès à vos donées sur Github
+   
+
+- Github va nous permettre de
+  - créer des projets (hébergés sur la plateforme):
+    - en haut à droite, le "+" pour create new repository
+    - ensuite, completer le formulaire de creation
+    - à la fin du remplissage de formulaire, vous devez obtenir
+      - un repertoire contenant 3 fichiers
+        - .gitignore
+        - README.md
+        - LICENSE
+
+* NB:
+- chaque opération peut se faire
+  - en ligne de commande (pour ceux qui sont à l'aise avec un terminal)
+  - ou bien avec Github Desktop (ce que je vous recommande à vous)
+
+
+- Après la création du projet, ce dernier se trouve sur la plateforme
+  - comment faire pour "récupérer une copie" sur mon ordinateur ?
+    - pour cela il faut executer la commande "clone"
+
+- la commande clone
+  - commande qui me permet de "récupérer" le projet sur ma machine
+  - git clone https://github.com/HalimaGN/GitKoffi.git
+
+- après avoir cloné le dépot il faut "entrer" à l'interieur du repertoire
+  - la commande pour ça est: cd nom_repertoire
+  - si vous n'entrez pas dans le repertoire du projet
+  - vous ne pourrez pas executez les commandes Git
+
+- la commande status
+  - git status
+  - commande me permettant de connaitre "l'état" de mon projet
+    - est ce qu'il y a des changements ?
+    - est ce qu'il y a des ajouts ?
+    - est ce qu'il y a des suppressions ?
+
+
+- la commande "add"
+  - maintenant que j'ai le projet sur ma machine,
+  - je vais écrire du code
+  - je vais ajouter des fichiers Python dans le projet
+  - après avoir ajouté de nouvelles choses dans le projet,
+    - je dois taper la commande "git add <nom-fichier>
+    - pour dire à Git qu'il doit tenir compte des modifications
+    - que je viens d'effectuer
+
+
+- la commande "commit"
+  - git commit -m "Message de commit"
+  - le commit est l'opération qui me permet de "marquer" une étape
+  - dans la vie du logiciel, lorsque j'execute cette commande, je dois
+  - donner un message qui résume en quelques sortes la fonctionnalité
+  - qui a été ajoutée
+
+- la commande "push"
+  - commande qui permet de
+    - prendre tout ce qui est en local
+    - et l'envoyer sur la plateforme
+  - git push origin master # dans mon cas parce que mon ordi est louche
+  - git push origin main # dans votre cas
+
+* NB:
+  - principe de base:
+  - pour ajouter du code dans un projet tout neuf, il faut:
+    - cloner le projet:           git clone url_du_depot
+    - demander l'état du dépôt:   git status
+    - ajouter des fichier:        git add nomfichier
+    - demander l'état du dépôt:   git status
+    - marquer une étape:          git commit -m "message"
+    - demander l'état du dépôt:   git status
+    - partager les modifications: git push origin main
+
